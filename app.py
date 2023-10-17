@@ -18,11 +18,11 @@ def getLLMChain():
     Given the description of his upcoming video give an SEO promising {promptType}. Just give the {promptType} of length {length} and nothing else.
     # Description: {description}
     """
-
+    prompt = PromptTemplate(input_variables=["promptType", "description", "length"], template = prompt_template)
     llm = OpenAI(temperature=0)
     llm_chain = LLMChain(
         llm=llm,
-        prompt=PromptTemplate.from_template(prompt_template)
+        prompt=prompt
     )
     return llm_chain
 
