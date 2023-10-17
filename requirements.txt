@@ -3,3 +3,4 @@ langchain
 flask
 python-dotenv
 gunicorn
+pydantic==1.10.9
